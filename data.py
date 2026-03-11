@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+import csv
+
 
 def read_data(path="data/pescados.csv"):
-    """Lee los datos del csv y los devuelve en una tupla de dos listas""""
+    """Lee los datos del csv y los devuelve en una tupla de dos listas"""
     long = []
     peso = []
     with open(path, newline="") as csvfile:
