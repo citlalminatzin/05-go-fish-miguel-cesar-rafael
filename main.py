@@ -6,16 +6,31 @@ from data import read_data, rls
 
 
 def plot_data(x: list[float], y: list[float]):
-    x3k = [(xi**3) / 1000 for xi in x]
+    x3 = [xi**3 for xi in x]
 
     fig, ax = plt.subplots()
-    ax.plot(x3k, y, "o")
+    ax.plot(x3, y, "o")
     ax.set_title("Datos de los Peces")
-    ax.set_xlabel("Volumen en $1000cm²$ por unidad")
+    ax.set_xlabel("Volumen en cm²")
     ax.set_ylabel("Peso en kg")
     ax.grid()
     plt.savefig("media/data.png")
     plt.close()
+
+    return None
+
+
+def plot_model(model: list[float], longitudes: list[float], pesos: list[float]):
+    x3 = [xi**3 for xi in longitudes]
+
+    fig, ax = plt.subplots()
+    ax.plot(x3, model, "-ro", label="datos del modelo geometrico")
+    ax.plot(x3, pesos, "o", label="peso")
+    ax.set_title("Modelo geometrico vs datos")
+    ax.set_xlabel("Volumen en $cm²$")
+    ax.set_ylabel("Peso en kg")
+    ax.grid()
+    plt.savefig("media/geometrico.png")
 
 
 def make_plot():
@@ -28,8 +43,18 @@ def make_plot():
 
 
 def main():
-    data: list[list] = read_data()
-    plot_data(data[0], data[1])
+    data: list[list[float]] = read_data()
+
+    longitudes: list[float] = data[0]
+    pesos: list[float] = data[1]
+    longitudes_cubo: list[float] = [longitud**3 for longitud in longitudes]
+
+    plot_data(longitudes, pesos)
+
+    k = rls(longitudes_cubo, pesos)
+    aprox = modelo_geom(longitudes, k)
+
+    plot_model(aprox, longitudes, pesos)
 
 
 if __name__ == "__main__":
