@@ -2,21 +2,14 @@
 
 import matplotlib.pyplot as plt
 from models import calc_error, modelo_geom, modelo_circ
-from data import read_data
+from data import read_data, rls
 
 
-def plot_data():
-    data = read_data()
-
-    long = data[0]
-    peso = data[1]
-
-    vol = []
-    for elem in long:
-        vol.append((elem * elem * elem) / 1000)
+def plot_data(x: list[float], y: list[float]):
+    x3k = [(xi**3) / 1000 for xi in x]
 
     fig, ax = plt.subplots()
-    ax.plot(vol, peso, "o")
+    ax.plot(x3k, y, "o")
     ax.set_title("Datos de los Peces")
     ax.set_xlabel("Volumen en $1000cm²$ por unidad")
     ax.set_ylabel("Peso en kg")
@@ -35,7 +28,8 @@ def make_plot():
 
 
 def main():
-    plot_data()
+    data: list[list] = read_data()
+    plot_data(data[0], data[1])
 
 
 if __name__ == "__main__":
