@@ -17,7 +17,7 @@ def read_data(path="data/pescados.csv"):
 
 
 # De https://github.com/LeninPA/tm1-2026-2/tree/main/01-regresion
-def rls(x: list[float], y: list) -> list[float]:
+def rls(x: list[float], y: list) -> float:
     n = len(x)
 
     xy = [xi * yi for xi, yi in zip(x, y)]
@@ -31,6 +31,5 @@ def rls(x: list[float], y: list) -> list[float]:
     suma_x2 = sum(x2)
 
     alfa = (suma_xy - avg_y * suma_x) / (suma_x2 - avg_x * suma_x)
-    beta = avg_y - alfa * avg_x
 
-    return [alfa, beta]
+    return alfa
