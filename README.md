@@ -47,45 +47,36 @@ print("Código en bloque")
 
 ## Ejercicio 3
 
-Para el nuevo modelo se considera que el peso del pez es proporcional a su volumen y que dicho volumen puede aproximarse mediante la longitud y la circunferencia máxima. A partir de los supuestos del problema se obtiene el modelo:
+Para el nuevo modelo se considera que el peso del pez es proporcional a su volumen y que dicho volumen puede aproximarse mediante la longitud y la circunferencia máxima.
 
-\[
-W = K\,l\,C^2
-\]
+El modelo propuesto es:
+
+**W = K·l·C²**
 
 donde:
-- \(W\) es el peso,
-- \(l\) es la longitud del pez,
-- \(C\) es la circunferencia máxima,
-- \(K\) es una constante que se estima con los datos.
+
+- **W** es el peso del pez
+- **l** es la longitud del pez
+- **C** es la circunferencia máxima
+- **K** es una constante que se estima con los datos
 
 Para ajustar el modelo se define:
 
-\[
-x_i = l_iC_i^2
-\]
+**xᵢ = lᵢ·Cᵢ²**
 
-y se calcula \(K\) por mínimos cuadrados usando:
+y se calcula **K** por mínimos cuadrados con la fórmula:
 
-\[
-K=\frac{\sum x_iW_i}{\sum x_i^2}
-\]
+**K = (Σ(xᵢ·Wᵢ)) / (Σ(xᵢ²))**
 
-Con los datos de la tabla se obtiene:
+Con los datos de la tabla se obtuvo:
 
-\[
-K \approx 2.0502\times10^{-5}
-\]
+**K ≈ 2.0502 × 10^-5**
 
 Por lo tanto, la fórmula explícita del modelo queda:
 
-\[
-\boxed{W \approx 2.0502\times10^{-5}\,l\,C^2}
-\]
+**W ≈ 2.0502 × 10^-5 · l · C²**
 
 Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que el ajuste puede considerarse bueno. Esto indica que, en esta muestra, incorporar la circunferencia máxima mejora la estimación del peso, ya que permite distinguir mejor entre peces más delgados y peces más anchos.
-
-
 
 ### También puedes agregar tablas y eliminar este sub encabezado
 
