@@ -43,49 +43,65 @@ print("Código en bloque")
 
 (Si no eliminas esta línea lloro) Puedes incluir notas al pie [^1].
 
-## Ejercicio 3
 
 ## Ejercicio 3
+
+Planteamiento: Ahora añadiremos una dimensión extra a nuestra tabla anterior. Supongamos que además
+de los datos anteriores también tenemos disponible la circunferencia máxima de cada pez
+Realice el ajuste del nuevo modelo en términos de la circunferencia ¿Cómo queda la
+fórmula explicita del modelo?¿Qué tan bueno es el ajuste?
+
+Para esta solucion considera la Tabla siguiente: 
+
+| Medida | Pez 1 | Pez 2 | Pez 3 | Pez 4 | Pez 5 | Pez 6 | Pez 7 |
+| ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| Longitud (cm) | 36.81 | 31.77 | 43.82 | 36.82 | 32.07 | 45.07 | 35.89 |
+| Peso (kg) | 0.78 | 0.47 | 1.16 | 0.74 | 0.44 | 1.40 | 0.64 |
+| Circunferencia máxima (cm) | 31.00 | 29.50 | 35.70 | 31.10 | 28.80 | 38.10 | 30.50 |
 
 Para el nuevo modelo se considera que el peso del pez es proporcional a su volumen y que dicho volumen puede aproximarse mediante la longitud y la circunferencia máxima.
 
 El modelo propuesto es:
 
-**W = K·l·C²**
+$$
+W = K\,l\,C^2
+$$
 
 donde:
 
-- **W** es el peso del pez
-- **l** es la longitud del pez
-- **C** es la circunferencia máxima
-- **K** es una constante que se estima con los datos
+- $W$ es el peso del pez
+- $l$ es la longitud del pez
+- $C$ es la circunferencia máxima
+- $K$ es una constante que se estima con los datos
 
 Para ajustar el modelo se define:
 
-**xᵢ = lᵢ·Cᵢ²**
+$$
+x_i = l_i\,C_i^2
+$$
 
-y se calcula **K** por mínimos cuadrados con la fórmula:
+y se calcula $K$ por mínimos cuadrados con la fórmula:
 
-**K = (Σ(xᵢ·Wᵢ)) / (Σ(xᵢ²))**
+$$
+K = \frac{\sum (x_i W_i)}{\sum (x_i^2)}
+$$
 
 Con los datos de la tabla se obtuvo:
 
-**K ≈ 2.0502 × 10^-5**
+$$
+K \approx 2.0502 \times 10^{-5}
+$$
 
 Por lo tanto, la fórmula explícita del modelo queda:
 
-**W ≈ 2.0502 × 10^-5 · l · C²**
+$$
+W \approx 2.0502 \times 10^{-5}\,l\,C^2
+$$
 
 Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que el ajuste puede considerarse bueno. Esto indica que, en esta muestra, incorporar la circunferencia máxima mejora la estimación del peso, ya que permite distinguir mejor entre peces más delgados y peces más anchos.
 
-### También puedes agregar tablas y eliminar este sub encabezado
 
-| Elimíname | Elimíname a mí también |
-| -------------- | --------------- |
-| $1$ | $54$ |
-| $2$ | $1000$ |
 
-(Si no eliminas esta línea lloro) Y luego puedes comentar que con base en la tabla anterior, se ve una explosión en los valores a partir del tiempo $t=2$. 
 
 ## Conclusión
 
