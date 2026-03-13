@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 from models import calc_error, modelo_geom, modelo_circ
 from data import read_data, rls
+from models import pearson
 
 
 def plot_data(x: list[float], y: list[float]):
@@ -44,10 +45,17 @@ def main():
     plot_data(longitudes, pesos)
 
     k = rls(longitudes_cubo, pesos)
+
     aprox = modelo_geom(longitudes, k)
 
-    plot_model(aprox, longitudes, pesos)
+    error = calc_error(aprox, pesos)
 
+    corr = pearson(aprox, pesos)
+
+    print("K estimado:", k)
+    print("Error cuadrático medio:", error)
+    print("Correlación:", corr)
+    plot_model(aprox, longitudes, pesos)
 
 if __name__ == "__main__":
     main()

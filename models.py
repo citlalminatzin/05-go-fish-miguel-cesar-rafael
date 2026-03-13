@@ -24,12 +24,28 @@ def modelo_circ(longitudes: list[float]) -> list[float]:
 
 def pearson(x: list[float], y: list[float]):
     """Calcula el coeficiente de pearson"""
-    ...
+    n = len(x)
+
+    sum_x = sum(x)
+    sum_y = sum(y)
+    sum_xx = sum([xi**2 for xi in x])
+    sum_yy = sum([yi**2 for yi in y])
+    sum_xy = sum([x[i]*y[i] for i in range(n)])
+
+    num = (n * sum_xy) - (sum_x * sum_y)
+    den = ((n * sum_xx - sum_x**2) * (n * sum_yy - sum_y**2)) ** 0.5
+
+    return num / den
 
 
 def calc_error(pred: list[float], truth: list[float]):
     """Calcula el error entre una predicción y la verdad del dataset"""
 
+    n = len(pred)
+
+    error = sum([(pred[i] - truth[i])**2 for i in range(n)]) / n
+
+    return error
 
 def main(): ...  # Puedes eliminar esta línea
 
