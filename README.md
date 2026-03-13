@@ -59,12 +59,32 @@ Para esta solucion considera la Tabla siguiente:
 | Peso (kg) | 0.78 | 0.47 | 1.16 | 0.74 | 0.44 | 1.40 | 0.64 |
 | Circunferencia máxima (cm) | 31.00 | 29.50 | 35.70 | 31.10 | 28.80 | 38.10 | 30.50 |
 
+A partir de los nuevos supuestos,
+
+$$V \propto l_e A_{prom}, \quad l_e \propto l, \quad A_{prom} \propto A_{max}$$
+
+y usando que
+
+$$C = 2\pi r,$$
+
+se tiene que
+
+$$A_{max} = \pi r^2 = \frac{C^2}{4\pi}.$$
+
+Por tanto,
+
+$$A_{max} \propto C^2,$$
+
+y entonces:
+
+$$V \propto l C^2.$$
+
 Para el nuevo modelo se considera que el peso del pez es proporcional a su volumen y que dicho volumen puede aproximarse mediante la longitud y la circunferencia máxima.
 
 El modelo propuesto es:
 
 $$
-W = K\,l\,C^2
+W = K\ l\ C^2
 $$
 
 donde:
@@ -77,7 +97,7 @@ donde:
 Para ajustar el modelo se define:
 
 $$
-x_i = l_i\,C_i^2
+x_i = l_i\ C_i^2
 $$
 
 y se calcula $K$ por mínimos cuadrados con la fórmula:
@@ -95,7 +115,7 @@ $$
 Por lo tanto, la fórmula explícita del modelo queda:
 
 $$
-W \approx 2.0502 \times 10^{-5}\,l\,C^2
+W \approx 2.0502 \times 10^{-5}\ l\ C^2
 $$
 
 Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que el ajuste puede considerarse bueno. Esto indica que, en esta muestra, incorporar la circunferencia máxima mejora la estimación del peso, ya que permite distinguir mejor entre peces más delgados y peces más anchos.
