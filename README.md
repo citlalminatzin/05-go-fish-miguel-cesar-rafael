@@ -27,7 +27,7 @@ A partir de estas ideas, se deduce que el peso es proporcional al volumen y que 
 
 ## Uso e instalación
 
-(Si no eliminas esta línea lloro) Aquí escribe qué necesitas que instale para ejecutar tu código, por ejemplo:
+Se ejecuta directamente el `main.py` 
 
 - `matplotlib`
 
@@ -72,19 +72,34 @@ Si los peces cambiaran radicalmente de forma al crecer (por ejemplo, si se volvi
 El hecho de que los puntos no estén dispersos al azar sugiere que el supuesto de densidad constante es razonable para este modelo inicial. Como el peso se define como $W=V⋅ρ$ , una línea recta indica que la densidad ($ρ$) no varía significativamente entre un pez pequeño y uno grande.
 
 ## Ejercicio 2
+Utiliza los datos anteriores y el método de tu preferencia para estimar un buen valor de \(K\) para nuestro modelo de similaridad geométrica
 
-(Por favor modifica esta línea, tú puedes yo creo en ti) Puedes darle formato de **negritas**, *itálicas*, incluir texto matemático $x\approx 1, \epsilon > 0$, [enlaces](https://www.markdownguide.org/cheat-sheet/), `código`,
+\[
+W = K l^3
+\]
+
+Grafica la estimación contra los datos.  
+
+**Preguntas:**
+- ¿Qué tan bueno es el ajuste?
+- ¿Hay algún efecto que nuestro modelo no capture?
+
+---
+
+### Hint
+
+Usa la librería `numpy`.
 
 ```python
-# Esto es un ejemplo, lo puedes quitar
-print("Código en bloque")
-```
+import numpy as np
 
-(Si no eliminas esta línea lloro) También puedes incluir citas
+a = np.array([1, 2, 3])
 
-> Por favor elimina esta cita
+print(np.sum(a))
+print(a**2)
 
-(Si no eliminas esta línea lloro) Puedes incluir notas al pie [^1].
+
+
 
 
 ## Ejercicio 3
