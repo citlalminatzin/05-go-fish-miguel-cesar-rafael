@@ -81,8 +81,10 @@ W = K l^3
 Grafica la estimación contra los datos.  
 
 **Preguntas:**
-- ¿Qué tan bueno es el ajuste?
-- ¿Hay algún efecto que nuestro modelo no capture?
+- ¿Qué tan bueno es el ajuste?: el modelo indica que el índice $k$ estimado es de 1.4955352120491e-05, con un error cuadratico de 0.002486277574601989 e índice de correlación de Correlación: 0.9907133500641261. Los valores sugieren que nuestro ajuste es bueno, ya que la correlación entre los datos observados y los valores estimados por el modelo es muy alta y el error cuadrático es relativamente pequeño. Esto indica que la relación $$W = K l^3$$  si describe la tendencia general de los datos, reflejando que las proporciones entre peses no varian demasiado, es decir, los peces si sin proporcionales entre sí.
+ describe adecuadamente la tendencia general de los datos
+- ¿Hay algún efecto que nuestro modelo no capture?: 
+Si bien nuestro modelo indica que los peces si son proporcionales entre sí, no toma en cuenta otras variables biológicas como son el estado del pez, la variación intraespecífica entre los individuos, si hubo errores de medición o si hay cambios en la forma a través del tiempo. Nuestro modelo se limita únicamente a longitud y peso, y otras variables medibles no son tomadas en cuenta
 
 ---
 
