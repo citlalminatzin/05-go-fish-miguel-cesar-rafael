@@ -33,14 +33,6 @@ def plot_model(model: list[float], longitudes: list[float], pesos: list[float]):
     plt.savefig("media/geometrico.png")
 
 
-def make_plot():
-    """
-    (Si no modificas esta cadena de texto lloro)
-    Si repites mucho tu código para
-    graficar puedes guardarlo en una función
-    """
-    ...  # Esto significa implementación pendiente, lo puedes eliminar
-
 
 def main():
     data: list[list[float]] = read_data()
