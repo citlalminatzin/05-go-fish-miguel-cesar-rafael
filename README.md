@@ -1,16 +1,28 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jw8MUQHd)
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23030697)
-# Pon aquí el título de tu práctica o no, no soy tu papá
+# Práctica 5: Modelos De Similitud Geométrica
+ El Problema del Campeonato de Pesca De Róbalo
 
-(Si no eliminas esta línea lloro) Este es un archivo de ejemplo donde debes de colocar la respuesta a tus ejercicios, piénsalo como tu reporte de práctica. Aquí puedes introducir el problema y definir los términos que consideres apropiados de forma concisa.
+En esta practica vamos a (intentar) construir un modelo para estimar el peso de un róbalo usando únicamente medidas que pueden obtenerse con una cinta métrica. El problema surge en el contexto de un campeonato de pesca, donde interesa estimar el peso de los peces sin necesidad de pesarlos directamente. 
+
+La práctica parte de varios supuestos:
+
+* Todos los peces son de la misma especie: róbalo
+
+* La densidad de los peces se considera constante
+
+* Se ignoran otros factores como edad, sexo o estación del año
+
+* se asume que los róbalos son geométricamente similares
+
+A partir de estas ideas, se deduce que el peso es proporcional al volumen y que el volumen se relaciona con el cubo de una longitud característica.
+
 
 ## Integrantes
 
-(Si no eliminas esta línea lloro) Escribe tus integrantes iniciando por apellido de forma alfabética
-
-- (Si no modificas esta línea lloro) Babilonia, Aureliano
-- (Si no modificas esta línea lloro) Buendía, Aureliano
-- (Si no modificas esta línea lloro) Segundo, Aureliano
+- Galeana Morán Miguel Ángel
+- García Chalche Julio César
+- Sáchez García Rafael
 
 
 ## Uso e instalación
@@ -26,7 +38,38 @@
 
 ## Ejercicio 1
 
-(Por favor modifica esta línea, lo suplico por piedad) Aquí puedes colocar la discusión del modelo, tu interpretación, el efecto de las condiciones iniciales. No tiene que ser perfecto, pero entre más casos puedas cubrir mejor
+Ajuste del Modelo de Peso en Pescados
+
+Planteamiento: Para poder ajustar nuestro modelo necesitamos datos sobre el peso ($W$) y la longitud ($l$) de algunos pescados. Los únicos datos sobrevivientes de los campeonatos anteriores se
+encuentran en la siguiente tabla:
+
+
+| Medida | Pez 1 | Pez 2 | Pez 3 | Pez 4 | Pez 5 | Pez 6 | Pez 7 |
+| ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| Longitud (cm) | 36.81 | 31.77 | 43.82 | 36.82 | 32.07 | 45.07 | 35.89 |
+| Peso (kg) | 0.78 | 0.47 | 1.16 | 0.74 | 0.44 | 1.40 | 0.64 |
+
+La relación que buscamos modelar es:
+
+$$W \propto l^3$$
+
+Esto implica que el peso es proporcional al volumen del pescado, asumiendo una densidad constante.
+
+<p align="center">
+  <img src="media/geometrico.png" width="400">
+</p>
+
+La tendencia lineal confirma que existe una relación de proporcionalidad directa entre el peso ($W$) y el cubo de la longitud ($l^3$). Esto significa que el peso aumenta exactamente en la misma proporción en que aumenta el volumen teórico del pez ($l^3$).
+
++ Cumplimiento de la Similitud Geométrica
+
+Esta alineación valida el supuesto de que los ejemplares de la especie (en este caso, los róbalos) son geométricamente similares, a pesar de tener diferentes tamaños, todos mantienen esencialmente la misma forma y proporciones.
+
+Si los peces cambiaran radicalmente de forma al crecer (por ejemplo, si se volvieran mucho más anchos proporcionalmente), los puntos se desviarían de la línea recta.
+
++ Consistencia en la Densidad
+
+El hecho de que los puntos no estén dispersos al azar sugiere que el supuesto de densidad constante es razonable para este modelo inicial. Como el peso se define como $W=V⋅ρ$ , una línea recta indica que la densidad ($ρ$) no varía significativamente entre un pez pequeño y uno grande.
 
 ## Ejercicio 2
 
