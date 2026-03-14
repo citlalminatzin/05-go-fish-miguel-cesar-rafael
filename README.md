@@ -3,7 +3,7 @@
 # Práctica 5: Modelos De Similitud Geométrica
  El Problema del Campeonato de Pesca De Róbalo
 
-En esta practica vamos a (intentar) construir un modelo para estimar el peso de un róbalo usando únicamente medidas que pueden obtenerse con una cinta métrica. El problema surge en el contexto de un campeonato de pesca, donde interesa estimar el peso de los peces sin necesidad de pesarlos directamente. 
+En esta practica vamos a *(intentar)* construir un modelo para estimar el peso de un róbalo usando únicamente medidas que pueden obtenerse con una cinta métrica. El problema surge en el contexto de un campeonato de pesca, donde interesa estimar el peso de los peces sin necesidad de pesarlos directamente. 
 
 La práctica parte de varios supuestos:
 
@@ -20,21 +20,15 @@ A partir de estas ideas, se deduce que el peso es proporcional al volumen y que 
 
 ## Integrantes
 
-- Galeana Morán Miguel Ángel
-- García Chalche Julio César
-- Sáchez García Rafael
+- **Galeana Morán Miguel Ángel**
+- **García Chalche Julio César**
+- **Sáchez García Rafael**
 
 
 ## Uso e instalación
 
 Se ejecuta directamente el `main.py` 
 
-- `matplotlib`
-
-(Si no eliminas esta línea lloro) Y dime cómo debería ejecutar tu código y en qué orden. Recuerda que antes de ejecutar tu código leeré tu `README.md`. Por ejemplo la manera en la que propongo que organizes tu código es
-
-- `main.py`: Contiene el código para graficar cada uno de los tres ejercicios
-- `` (Por favor modifica esta línea)
 
 ## Ejercicio 1
 
@@ -88,22 +82,6 @@ Si bien nuestro modelo indica que los peces si son proporcionales entre sí, no 
 
 ---
 
-### Hint
-
-Usa la librería `numpy`.
-
-```python
-import numpy as np
-
-a = np.array([1, 2, 3])
-
-print(np.sum(a))
-print(a**2)
-
-
-
-
-
 ## Ejercicio 3
 
 Planteamiento: Ahora añadiremos una dimensión extra a nuestra tabla anterior. Supongamos que además
@@ -117,7 +95,7 @@ Para esta solucion considera la Tabla siguiente:
 | ------ | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 | Longitud (cm) | 36.81 | 31.77 | 43.82 | 36.82 | 32.07 | 45.07 | 35.89 |
 | Peso (kg) | 0.78 | 0.47 | 1.16 | 0.74 | 0.44 | 1.40 | 0.64 |
-| Circunferencia máxima (cm) | 31.00 | 29.50 | 35.70 | 31.10 | 28.80 | 38.10 | 30.50 |
+| Circunferencia máxima (cm) | 24.77 | 21.29 | 27.94 | 24.77 | 21.59 | 31.75 | 22.86 |
 
 A partir de los nuevos supuestos,
 
@@ -169,14 +147,15 @@ $$
 Con los datos de la tabla se obtuvo:
 
 $$
-K \approx 2.0502 \times 10^{-5}
+K \approx 3.2352 \times 10^{-5}
 $$
 
-Por lo tanto, la fórmula explícita del modelo queda:
+Por lo tanto, la fórmula explícita del modelo es:
 
 $$
-W \approx 2.0502 \times 10^{-5}\ l\ C^2
+W \approx 3.2352 \times 10^{-5}\,l\,C^2
 $$
+
 
 Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que el ajuste puede considerarse bueno. Esto indica que, en esta muestra, incorporar la circunferencia máxima mejora la estimación del peso, ya que permite distinguir mejor entre peces más delgados y peces más anchos.
 
@@ -185,8 +164,20 @@ Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que 
 
 ## Conclusión
 
-(Por favor modifica esta línea bro, es la última que tienes que modificar bro, por favor bro) Es buena práctica concluir tus prácticas. ¿Qué te llevas? ¿Sientes que fue relevante para ti? ¿Se te complicó algún aspecto? ¿Hubo algún resultado que contradijera tu intuición? 
+## Conclusión
 
----
+ (*¡Si lo intentamos!*)
 
-[^1]: Sólo soy una nota al pie, elimíname bro, por favor bro.
+En esta práctica se analizaron distintos modelos para estimar el peso de un róbalo a partir de medidas geométricas obtenidas con una cinta métrica. Primero, a partir de los supuestos de densidad constante y similitud geométrica, se estudió la relación entre la longitud y el peso del pez. Esto permitió construir un modelo inicial basado únicamente en la longitud, observando que el peso crece de manera relacionada con el volumen y, por tanto, con el cubo de una longitud característica.
+
+Posteriormente, se ajustó el modelo con los datos disponibles mediante regresión, lo que permitió comparar los valores estimados con los pesos reales. Este primer modelo resultó útil para describir la tendencia general de los datos, mostrando que la longitud es una variable importante para aproximar el peso. Sin embargo, también se observó una limitación importante: peces con longitudes similares pueden tener pesos distintos debido a diferencias en su grosor o complexión.
+
+Por esta razón, en el ejercicio 3 se incorporó la circunferencia máxima como una nueva variable, obteniendo un modelo más completo de la forma:
+
+$$
+W = K\,l\,C^2
+$$
+
+Este nuevo modelo permitió representar mejor la influencia del ancho del pez en su peso, corrigiendo parcialmente la limitación del modelo basado solo en la longitud. A partir del ajuste realizado, se comprobó que incluir la circunferencia puede mejorar la estimación, siempre que los datos presenten una relación consistente entre longitud, grosor y peso.
+
+En conclusión, la práctica mostró cómo a partir de supuestos físicos y geométricos es posible construir modelos matemáticos útiles para resolver un problema real. También permitió entender que un modelo puede ser razonable teóricamente, pero su calidad depende de qué tan bien las variables elegidas describan el fenómeno observado. En este caso, la longitud ofrece una primera aproximación, mientras que la incorporación de la circunferencia da lugar a un modelo más realista y con mayor capacidad de ajuste.
