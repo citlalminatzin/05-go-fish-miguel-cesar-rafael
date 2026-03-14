@@ -161,9 +161,6 @@ Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que 
 
 
 
-
-## Conclusión
-
 ## Conclusión
 
  (*¡Si lo intentamos!*)
