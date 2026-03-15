@@ -172,7 +172,7 @@ Posteriormente, se ajustó el modelo con los datos disponibles mediante regresi�
 Por esta razón, en el ejercicio 3 se incorporó la circunferencia máxima como una nueva variable, obteniendo un modelo más completo de la forma:
 
 $$
-W = K\,l\,C^2
+W = K\,l\,C^3
 $$
 
 Este nuevo modelo permitió representar mejor la influencia del ancho del pez en su peso, corrigiendo parcialmente la limitación del modelo basado solo en la longitud. A partir del ajuste realizado, se comprobó que incluir la circunferencia puede mejorar la estimación, siempre que los datos presenten una relación consistente entre longitud, grosor y peso.
