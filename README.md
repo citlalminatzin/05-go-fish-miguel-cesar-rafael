@@ -185,8 +185,4 @@ Los pesos estimados con este modelo son cercanos a los pesos reales, por lo que 
 
 ## Conclusión
 
-(Por favor modifica esta línea bro, es la última que tienes que modificar bro, por favor bro) Es buena práctica concluir tus prácticas. ¿Qué te llevas? ¿Sientes que fue relevante para ti? ¿Se te complicó algún aspecto? ¿Hubo algún resultado que contradijera tu intuición? 
 
----
-
-[^1]: Sólo soy una nota al pie, elimíname bro, por favor bro.
